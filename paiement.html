@@ -1,0 +1,110 @@
+<div class="container">
+
+    <div id="usage_options" class="middle">
+        <label>
+            <input type="radio" name="radio" onclick="toggleUsageTimer(false)" />
+            <div class="selected box">
+                <span><i class="bi bi-cash-coin"></i> Espèces</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="radio" onclick="toggleUsageTimer(false)"/>
+            <div class="selected box">
+                <span><i class="bi bi-record-btn"></i> Chèque</span>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="radio" checked onclick="toggleUsageTimer(true)"/>
+            <div class="selected box">
+                <span><i class="bi bi-credit-card-fill"></i> Carte Bleu</span>
+            </div>
+        </label>
+    </div>
+
+    <center>
+        <label id="usage_unit" class="bignumber">X €</label>
+    </center>
+
+    <h1>Monnaie acceptés</h1>
+    <div id="cash_menu" class="grid monnaie">
+        <img onclick="cashmanager.add_cash(this, 0.1, 'cashgiven_menu')" src="img/euros/cash_0_1.png">
+        <img onclick="cashmanager.add_cash(this, 0.2, 'cashgiven_menu' )" src="img/euros/cash_0_2.png">
+        <img onclick="cashmanager.add_cash(this, 0.5, 'cashgiven_menu')" src="img/euros/cash_0_5.png">
+        <img onclick="cashmanager.add_cash(this, 1, 'cashgiven_menu')" src="img/euros/cash_1.png">
+        <img onclick="cashmanager.add_cash(this, 2, 'cashgiven_menu')" src="img/euros/cash_2.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 5, 'cashgiven_menu')" src="img/euros/cash_5.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 10, 'cashgiven_menu')" src="img/euros/cash_10.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 20, 'cashgiven_menu')" src="img/euros/cash_20.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 50, 'cashgiven_menu')" src="img/euros/cash_50.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 100, 'cashgiven_menu')" src="img/euros/cash_100.png">
+        <img class="bill" onclick="cashmanager.add_cash(this, 200, 'cashgiven_menu')" src="img/euros/cash_200.png">
+    </div>
+    <br>
+    <h1>Monnaie donnée</h1>
+    <div id="cash_given" class="monnaie">
+        <div class="grid">
+            <div id="cashgiven_menu_0_1_box"></div>
+            <div id="cashgiven_menu_0_2_box"></div>
+            <div id="cashgiven_menu_0_5_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashgiven_menu_1_box"></div>
+            <div id="cashgiven_menu_2_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashgiven_menu_5_box"></div>
+            <div id="cashgiven_menu_10_box"></div>
+            <div id="cashgiven_menu_20_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashgiven_menu_50_box"> </div>
+            <div id="cashgiven_menu_100_box"> </div>
+            <div id="cashgiven_menu_200_box"> </div>
+        </div>
+    </div>
+    <h1 id="cashgiven_label">Monnaie à rendre</h1>
+    <div id="cash_to_give" class="monnaie">
+        <div class="grid">
+            <div id="cash_to_give_menu_0_1_box"></div>
+            <div id="cash_to_give_menu_0_2_box"></div>
+            <div id="cash_to_give_menu_0_5_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cash_to_give_menu_1_box"></div>
+            <div id="cash_to_give_menu_2_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cash_to_give_menu_5_box"></div>
+            <div id="cash_to_give_menu_10_box"></div>
+            <div id="cash_to_give_menu_20_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cash_to_give_menu_50_box"> </div>
+            <div id="cash_to_give_menu_100_box"> </div>
+            <div id="cash_to_give_menu_200_box"> </div>
+        </div>
+    </div>
+    <h1>Caisse</h1>
+    <div id="cashbox" class="grid monnaie">
+        <div class="grid">
+            <div id="cashbox_menu_0_1_box"></div>
+            <div id="cashbox_menu_0_2_box"></div>
+            <div id="cashbox_menu_0_5_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashbox_menu_1_box"></div>
+            <div id="cashbox_menu_2_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashbox_menu_5_box"></div>
+            <div id="cashbox_menu_10_box"></div>
+            <div id="cashbox_menu_20_box"></div>
+        </div>
+        <div class="grid">
+            <div id="cashbox_menu_50_box"> </div>
+            <div id="cashbox_menu_100_box"> </div>
+            <div id="cashbox_menu_200_box"> </div>
+        </div>
+    </div>
+</div>

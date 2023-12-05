@@ -1,7 +1,7 @@
 class CashManager {
     constructor() {
-        this.to_paid = 25;
-        this.cashbox_item = [0.1, 0.1, 0.2, 0.5, 1, 2, 5, 20, 50, 50, 10].sort((a, b) => b - a);
+        this.to_paid = 0;
+        this.cashbox_item = [0.1, 0.1, 0.2, 0.5, 1, 2, 5, 20, 50, 50, 10, 100, 200].sort((a, b) => b - a);
         this.cashbox_value = 138.9;
         this.new_cashbox_item = [];
         this.cash_given_value = 0;
@@ -26,8 +26,8 @@ class CashManager {
     }
 
     fill_cash(item, current_cash) {
-        //console.log("Get Element" + item);
-        //console.log(current_cash);
+        console.log("Get Element:" + item);
+        console.log(current_cash);
 
         //console.log(element);
         document.getElementById(item + "_0_1_box").innerHTML = "";

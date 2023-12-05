@@ -43,120 +43,18 @@
     --pico-switch-color: var(--pico-background-color);
 }
 
-#badge {
-    transition: transform 3s ease
-}
-
-#badge.moved {
-    transform: translateX(-30px);
-}
-
-#badge.notmoved {
-    transform: translateX(0px);
-}
 
 .bignumber {
     font-size: 130px;
     text-align: center;
-
 }
 
-.mediumnumber {
-    font-size: 50px;
-}
-
-.hide {
-    display: none;
-}
-
-.timercounter {
-    width: 200px;
-}
-
-input#timeCounter {
-    height: fit-content;
-    width: 300px;
-}
-
-/* Machine Menu/Images */
-
-.image-button {
-    transition: transform 0.1s ease;
-    width: 100%;
-
-}
-
-.image-button img {
-    border: 10px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-button span {
-    color: white;
-    background-color: black;
-    font-size: 18px;
-    justify-content: center;
-}
-
-.image-button:hover {
-    transform: translateY(10px);
-}
-
-.image-button:active {
-    transform: translateY(50px);
-}
-
-/*
-@media (max-width: 576px) {
-    .machine_menu {
-        background-color: red;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0px;
-    }
-
-    .image-button {
-        width: 150px;
-    }
-
-    .image-button span {
-        color: white;
-        background-color: black;
-        font-size: 10px;
-    }
-}
-
-/* NAVBAR CSS */
-/*
-@media (max-width: 768px) {
-    .machine_menu {
-        background-color: green;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0px;
-    }
-
-    .image-button {
-        background-color: red;
-        width: 100px;
-    }
-    
-    .image-button span {
-        color: white;
-        background-color: black;
-        font-size: 10px;
-    }
-}
-*/
 
 /* CASH CSS */
 .monnaie img{
     height: auto;
     max-width: none;
+
 }
 
 @media (max-width: 768px) {
@@ -172,49 +70,4 @@ input#timeCounter {
         max-height:80px;
     }
 }
-
-/* NAVBAR CSS */
-nav {
-    justify-content: center;
-    font-size:30px;
-}
-nav a {
-    padding-left:30px;
-}
-
-@media (max-width: 960px) {
-    nav {
-        font-size:25px;
-    }
-    nav a {
-        padding-left:10px;
-    }
-}
-
-@media (max-width: 720px) {
-    nav {
-        font-size:20px;
-    }
-    nav a {
-        padding-left:0px;
-    }
-}
-
-@media (max-width: 520px) {
-    nav {
-        font-size:15px;
-    }
-    nav a {
-        padding-left:0px;
-    }
-}
-
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    opacity: 1;
-}
-
-
-
 

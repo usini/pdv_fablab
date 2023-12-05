@@ -5,313 +5,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDV DOLIBARR</title>
+    <title>Caisse</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="radio.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <nav>
-            <ul id="navigationBar">
-                <li id="item-machine"><a href="#" onclick="changePage('machine')">
-                        <i class="bi bi-wrench"></i> Machine</a>
-                </li>
-                <li id="item-usage">
-                        <a onclick="changePage('usage')" href="#">
-                            <i class="bi bi-clock-history"></i> Utilisation
-                        </a>
-                </li>
-                <li id="item-membre">
-                    <a href="#" id="membre" onclick="changePage('membre')" href="">
-                        <i class="bi bi-person-bounding-box"></i> Membre
-                    </a>
-                </li>
-                <li id="item-paiement">
-                    <a onclick="changePage('paiement')" href="#">
-                        <i class="bi bi-cash"></i> Paiement
-                    </a>
-                </li>
-                <li id="item-recap">
-                    <a href="#" id="recap" onclick="changePage('recap')" href="">
-                        <i class="bi bi-receipt"></i></i>
-                        Récapitulatif
-                    </a>
-                </li>
-                <li id="item-cashbox">
-                    <a id="cashbox" onclick="changePage('cashbox')" href="#">
-                        <i class="bi bi-wallet-fill"></i> Caisse
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <br>
+        <center>
+            <input class="bignumber" type="text" onkeydown="" value="0">
+            <div class="grid">
+                <button disabled>Caisse</button><button>Rendu</button>
+            </div>
+        </center>
+        <h1>Monnaie acceptés</h1>
+        <div id="cash_menu" class="grid monnaie">
+            <img onclick="cashmanager.add_cash(this, 0.1, 'cashgiven_menu')" src="img/euros/cash_0_1.png">
+            <img onclick="cashmanager.add_cash(this, 0.2, 'cashgiven_menu' )" src="img/euros/cash_0_2.png">
+            <img onclick="cashmanager.add_cash(this, 0.5, 'cashgiven_menu')" src="img/euros/cash_0_5.png">
+            <img onclick="cashmanager.add_cash(this, 1, 'cashgiven_menu')" src="img/euros/cash_1.png">
+            <img onclick="cashmanager.add_cash(this, 2, 'cashgiven_menu')" src="img/euros/cash_2.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 5, 'cashgiven_menu')" src="img/euros/cash_5.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 10, 'cashgiven_menu')" src="img/euros/cash_10.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 20, 'cashgiven_menu')" src="img/euros/cash_20.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 50, 'cashgiven_menu')" src="img/euros/cash_50.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 100, 'cashgiven_menu')" src="img/euros/cash_100.png">
+            <img class="bill" onclick="cashmanager.add_cash(this, 200, 'cashgiven_menu')" src="img/euros/cash_200.png">
+        </div>
+        <br>
+        <h1>Monnaie donnée</h1>
+        <div id="cash_given" class="monnaie">
+            <div class="grid">
+                <div id="cashgiven_menu_0_1_box"></div>
+                <div id="cashgiven_menu_0_2_box"></div>
+                <div id="cashgiven_menu_0_5_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cashgiven_menu_1_box"></div>
+                <div id="cashgiven_menu_2_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cashgiven_menu_5_box"></div>
+                <div id="cashgiven_menu_10_box"></div>
+                <div id="cashgiven_menu_20_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cashgiven_menu_50_box"> </div>
+                <div id="cashgiven_menu_100_box"> </div>
+                <div id="cashgiven_menu_200_box"> </div>
+            </div>
+        </div>
+        <h1 id="cashgiven_label">Monnaie à rendre</h1>
+        <div id="cash_to_give" class="monnaie">
+            <div class="grid">
+                <div id="cash_to_give_menu_0_1_box"></div>
+                <div id="cash_to_give_menu_0_2_box"></div>
+                <div id="cash_to_give_menu_0_5_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cash_to_give_menu_1_box"></div>
+                <div id="cash_to_give_menu_2_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cash_to_give_menu_5_box"></div>
+                <div id="cash_to_give_menu_10_box"></div>
+                <div id="cash_to_give_menu_20_box"></div>
+            </div>
+            <div class="grid">
+                <div id="cash_to_give_menu_50_box"> </div>
+                <div id="cash_to_give_menu_100_box"> </div>
+                <div id="cash_to_give_menu_200_box"> </div>
+            </div>
+        </div>
+        <h1>Caisse</h1>
+        <div id="cashbox" class="monnaie">
+            <table>
+                <tr>
+                    <td id="cashbox_menu_0_1_box"></td>
+                    <td id="cashbox_menu_0_2_box"></td>
+                    <td id="cashbox_menu_0_5_box"></td>
+                </tr>
+                <tr>
+                    <td id="cashbox_menu_1_box"></td>
+                    <td id="cashbox_menu_2_box"></td>
+                </tr>
+                <tr>
+                    <td id="cashbox_menu_5_box"></td>
+                    <td id="cashbox_menu_10_box"></td>
+                    <td id="cashbox_menu_20_box"></td>
+                </tr>
+
+                <tr>
+                    <td id="cashbox_menu_50_box"> </td>
+                    <td id="cashbox_menu_100_box"> </td>
+                    <td id="cashbox_menu_200_box"> </td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <main id="page" class="container">
     </main>
-
-    <div class="container">
-        <nav>
-            <ul id="navigationBar">
-                <li id="item-server">
-                    <a class="page-link" onclick="changePage('server_setup')" href="#">
-                        <i class="bi bi-server"></i> Serveur:
-                        <span id="server_url"></span>
-                    </a>
-                </li>
-                <li id="item-login" class="page-item">
-                    <a class="page-link" href="#" onclick="changePage('login')">
-                        <i class="bi bi-person-bounding-box"></i>
-                        <span id="username">Aucun</span>
-                    </a>
-                </li>
-                <li id="item-badger">
-                    <a class="page-link" onclick="changePage('Badger')" href="#">
-                        <i class="bi bi-cash"></i> Badgeuse
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 </body>
 
-<script src="js/htmlswitcher.js"></script>
-<script src="js/svg.js"></script>
-<script src="js/esperial.js"></script>
-<script src="js/dolibarrAPI.js"></script>
+
 <script src="js/cash.js"></script>
 
 <script>
-    entree_machine = "";
-    serial = new Esprerial(baudrate = 9600, endline = "\n")
-    serial.setStart(writeBadge);
-    serial.setRead(readBadge);
-    badge_animation = true;
-    login_animation = null;
-
-    url = localStorage.getItem("pdv_fablab_url");
-    api = new DolibarrAPI(url);
-
-    // Check if url is defined, else show login page
-
     cashmanager = new CashManager();
-
-
-    function connectBadger() {
-        serial.begin();
-    }
-
-    function writeBadge() {
-        serial.write("write");
-    }
-
-    function readBadge(message) {
-        if (message.includes("Waiting for tag")) {
-            serial.write("test");
-        }
-    }
-
-    /*
-    if (url !== null) {
-        document.getElementById("server_url").innerHTML = url;
-        changePage("login");
-    } else {
-        toggleNavBar(false);
-        changePage("server_setup");
-    }
-    */
-
-    changePage("machine");
-
-    /* Graphical Functions */
-    function toggleSpinner(showSpinner) {
-        var btn = document.getElementById("btnCheckServer");
-
-        var spinner = btn.querySelector('.spinner-border');
-
-        if (showSpinner) {
-            // Ajoutez la classe "d-none" pour afficher le spinner
-            btn.classList.add("disabled");
-            spinner.classList.remove('d-none');
-        } else {
-            // Supprimez la classe "d-none" pour cacher le spinner
-            btn.classList.remove("disabled");
-            spinner.classList.add('d-none');
-        }
-    }
-
-    function createAlert(selectedDiv, type, message) {
-        var selectedDiv = document.getElementById(selectedDiv);
-        selectedDiv.innerHTML += `<div class="alert alert-${type} role="alert">${message}</div>`
-    }
-
-    function toggleUsageTimer(state) {
-        if (state) {
-            document.getElementById("timeCounter").disabled = false;
-        } else {
-            document.getElementById("timeCounter").disabled = true;
-        }
-    }
-
-    function enterPassword() {
-        if (event.key === "Enter") {
-            api.login(document.getElementById("dolikey").value).then(data => {
-                if (data) {
-                    toggleNavBar(true);
-                    clearInterval(login_animation);
-                    document.getElementById("username").innerHTML = api.user.name;
-                    goPage("machine");
-                } else {
-                    alert("Ah, Ah, Ah You didn't said the Magic Word!");
-                }
-            })
-        }
-    }
-
-    function resetServer() {
-        localStorage.clear("pdv_fablab_url");
-    }
-
-    function checkServer() {
-        var serveur_test = document.getElementById("server_input").value
-        toggleSpinner(true);
-        api.testServer(serveur_test).then(status => {
-            console.log("Etat du " + serveur_test + " est " + status);
-            if (status) {
-                createAlert("messageServer", "success", "🆗 Serveur connecté!");
-                localStorage.setItem("pdv_fablab_url", serveur_test);
-                setTimeout(function () {
-                    changePage("login");
-                }, 3000);
-            } else {
-                createAlert("messageServer", "danger", "❌ Serveur invalide");
-            }
-            toggleSpinner(false);
-        });
-    }
-
-    function toggleNavBar(disable) {
-        var navigationBar = document.getElementById("navigationBar");
-        var elementsLi = navigationBar.getElementsByTagName("li");
-        for (var i = 0; i < elementsLi.length; i++) {
-            var li = elementsLi[i];
-            if (disable) {
-                li.classList.remove("disabled");
-            } else {
-                li.classList.add("disabled");
-            }
-        }
-    }
-
-    function chercher_membre(event) {
-        entree_machine = document.getElementById("entree_membre").value;
-        if (event.key === "Enter" || event.key === undefined) {
-            username = document.getElementById("entree_membre").value;
-
-            api.getClient(username).then(data => {
-                options_membres = [];
-                data.forEach(data => {
-                    options_membres.push(data.name);
-                });
-                change_options(options_membres);
-            });
-        }
-    }
-
-    function change_options(nouvellesValeurs) {
-        console.log("ChangeOptions");
-        // Supprime toutes les options actuelles du champ select
-        const selectElement = document.getElementById("liste_membres"); // Remplace "votreSelect" par l'ID de votre champ select
-        selectElement.innerHTML = "";
-        // Ajoute les nouvelles options au champ select
-        nouvellesValeurs.forEach(valeur => {
-            const option = document.createElement("option");
-            option.text = valeur;
-            selectElement.add(option);
-        });
-    }
-
-    function chooseMachine(machine) {
-        console.log("🔧 " + machine);
-        api.products.push({
-            "name": machine
-        })
-        changePage("usage");
-    }
-
-    function changePage(page) {
-        console.log("➡️📄" + page);
-        switch (page) {
-            case "machine":
-                toggleNavBar(true);
-                goPage("machine");
-                break;
-            case "usage":
-                toggleNavBar(true);
-                goPage("usage");
-                break;
-            case "membre":
-                toggleNavBar(true);
-                goPage("membre", function () {
-                    document.getElementById("entree_membre").value = entree_machine;
-                });
-                break;
-            case "server_setup":
-                toggleNavBar(false);
-                goPage("server_setup", function () {
-                    if (api.url != null) {
-                        document.getElementById("server_input").value = api.url;
-                    }
-                });
-                break;
-
-            case "paiement":
-                goPage("paiement", function() {
-                    cashmanager.fill_cash("cashbox_menu", cashmanager.cashbox_item);
-                })
-            break;
-
-            case "cashbox":
-            goPage("cashbox", function() {
-                cashmanager.fill_cash("cashbox_menu", cashmanager.cashbox_item);
-                })
-            break;
-
-            case "login":
-                toggleNavBar(false);
-
-                goPage("login", function () {
-                    load_svg("img/rfid_reader.svg", "rfidreader", function () {
-                        clearInterval(login_animation);
-                        badge_animation = true;
-                        if (document.getElementById("badge").classList.value == "moved") {
-                            document.getElementById("badge").classList.remove("moved");
-                        }
-                        document.getElementById("badge").classList.add("moved");
-                        document.getElementById("dolikey").focus();
-                        login_animation = setInterval(function () {
-                            if (badge_animation) {
-                                //console.log("Moved");
-                                document.getElementById("badge").classList.remove("moved");
-                            } else {
-                                //console.log("Not moved");
-                                document.getElementById("badge").classList.add("moved");
-                            }
-                            badge_animation = !badge_animation
-                        }, 3000);
-                    });
-                });
-                break;
-
-            default:
-                goPage(page);
-                break;
-        }
-    }
-
+    cashmanager.fill_cash("cashbox_menu", cashmanager.cashbox_item);
 </script>
 
 </html>
